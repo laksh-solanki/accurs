@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-light text-center text-lg-start mt-4">
+  <footer class="bg-dark text-center text-light">
     <div class="text-center p-3">
       © 2024 My App
     </div>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'FooterComponent'
+  name: 'Footer'
 }
 </script>
 
