@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <router-link class="navbar-brand" to="/">Accurs</router-link>
       <button
@@ -54,6 +54,11 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+.navbar{
+  padding: 11px 0 11px 0 ;
+}
+
 .nav-link {
   font-family: "Rubik", sans-serif;
 }
@@ -77,16 +82,16 @@ export default {
 
 .input {
   width: 100%;
-  height: 40px;
-  line-height: 28px;
+  height: 100%;
+  font-size:  14px;
   padding: 0 1rem;
   padding-left: 2.5rem;
   border: 2px solid transparent;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   outline: none;
-  background-color: #f3f3f4;
-  color: #0d0c22;
+  background-color: #000000;
+  color: #ffffff;
   transition: 0.3s ease;
 }
 
@@ -98,7 +103,7 @@ export default {
 input:hover {
   outline: none;
   border-color: rgba(234, 76, 137, 0.4);
-  background-color: #fff;
+  background-color: #000000;
   box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
 }
 

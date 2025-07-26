@@ -2,8 +2,11 @@
   <div class="card h-100 bg-dark text-white border-secondary">
     <img :src="imageSrc" class="card-img-top" :alt="title">
     <div class="card-body">
-      <h5 class="card-title">{{ title }}</h5>
+      <h5 class="card-title" @click="copyTitle(title)">{{ title }}</h5>
       <p class="card-text">{{ description }}</p>
+      <transition name="fade">
+        <span v-if="showCopiedMessage" class="copied-message">Copied!</span>
+      </transition>
     </div>
   </div>
 </template>
@@ -23,6 +26,23 @@ export default {
     description: {
       type: String,
       required: true
+    }
+  },
+  data() {
+    return {
+      showCopiedMessage: false
+    };
+  },
+  methods: {
+    copyTitle(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        this.showCopiedMessage = true;
+        setTimeout(() => {
+          this.showCopiedMessage = false;
+        }, 1500); // Message disappears after 1.5 seconds
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
     }
   }
 }
@@ -71,9 +91,40 @@ export default {
 
 .card-title {
   margin-bottom: 0.5rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  cursor: pointer; /* Indicate that the title is clickable */
 }
 
 .card-text {
   font-size: 0.9rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease 0.1s;
+}
+
+.card:hover .card-title,
+.card:hover .card-text {
+  transform: translateY(0);
+}
+
+.copied-message {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* Fade transition for copied message */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
 }
 </style>

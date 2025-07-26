@@ -95,7 +95,7 @@ export default {
   border-radius: 0.8em;
   cursor: pointer;
   border: 1px unset white;
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: linear-gradient(to right, #ffffff, #ff8a8a);
   color: ghostwhite;
   overflow: hidden;
 }
