@@ -52,6 +52,13 @@
       </div>
     </div>
   </div>
+
+  <transition name="alert-fade">
+    <div v-if="showAlert" class="alert alert-success alert-dismissible fade show custom-alert" role="alert">
+      Message sent successfully!
+      <button type="button" class="btn-close" @click="showAlert = false" aria-label="Close"></button>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -64,13 +71,17 @@ export default {
         email: '',
         subject: '',
         message: ''
-      }
+      },
+      showAlert: false
     };
   },
   methods: {
     submitForm() {
       console.log('Form submitted:', this.form);
-      alert('Thank you for your message!');
+      this.showAlert = true;
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 3000); // Alert will disappear after 3 seconds
       this.form = {
         name: '',
         email: '',
@@ -118,5 +129,24 @@ export default {
 
 iframe {
   border-radius: 5px;
+}
+
+.custom-alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050;
+  width: 300px; /* Adjust width as needed */
+}
+
+.alert-fade-enter-active,
+.alert-fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.alert-fade-enter-from,
+.alert-fade-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
 }
 </style>
