@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { createRouter, createWebHistory } from 'vue-router'
+import { inject } from '@vercel/speed-insights';
 
 import Home from './pages/Home.vue'
 import About from './pages/About.vue'
@@ -22,4 +23,5 @@ const router = createRouter({
   routes
 })
 
+inject();
 createApp(App).use(router).mount('#app')
