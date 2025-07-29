@@ -1,32 +1,3 @@
-<template>
-  <div class="services-page">
-    <header class="services-header">
-      <div class="container">
-        <h1>Our Services</h1>
-        <p class="lead">We offer a wide range of services to help you achieve your goals.</p>
-      </div>
-    </header>
-
-    <main class="container">
-      <div class="row">
-        <div class="col-md-4" v-for="service in services" :key="service.id">
-          <div class="card service-card">
-            <div class="card-body text-center">
-              <i :class="service.icon" class="service-icon"></i>
-              <h5 class="card-title">{{ service.title }}</h5>
-              <p class="card-text">{{ service.description }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-5">
-        <a href="/contact" class="btn btn-primary btn-lg">Get in Touch</a>
-      </div>
-    </main>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'ServicesPage',
@@ -57,6 +28,34 @@ export default {
 };
 </script>
 
+<template>
+  <div class="services-page">
+    <header class="services-header">
+      <div class="container">
+        <h1>Our Services</h1>
+        <p class="lead">We offer a wide range of services to help you achieve your goals.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-4" v-for="service in services" :key="service.id">
+          <div class="card service-card">
+            <div class="card-body text-center">
+              <i :class="service.icon" class="service-icon"></i>
+              <h5 class="card-title">{{ service.title }}</h5>
+              <p class="card-text">{{ service.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="/contact" class="btn btn-primary btn-lg">Get in Touch</a>
+      </div>
+    </main>
+  </div>
+</template>
 <style scoped>
 .services-page {
   padding-bottom: 3rem;

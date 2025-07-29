@@ -1,3 +1,26 @@
+<script>
+export default {
+  name: "AboutPage",
+  data() {
+    return {
+      showForm: false,
+      showAlert: false,
+    };
+  },
+  methods: {
+    toggleForm() {
+      this.showForm = true;
+    },
+    showAlertMessage() {
+      this.showAlert = true;
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 3000); // Alert will disappear after 3 seconds
+    },
+  },
+};
+</script>
+
 <template>
   <div class="container-fluid bg-black">
     <div class="container bg-black">
@@ -31,29 +54,6 @@
     </div>
   </transition>
 </template>
-
-<script>
-export default {
-  name: "AboutPage",
-  data() {
-    return {
-      showForm: false,
-      showAlert: false,
-    };
-  },
-  methods: {
-    toggleForm() {
-      this.showForm = true;
-    },
-    showAlertMessage() {
-      this.showAlert = true;
-      setTimeout(() => {
-        this.showAlert = false;
-      }, 3000); // Alert will disappear after 3 seconds
-    },
-  },
-};
-</script>
 
 <style scoped>
 /* Add component-specific styles here */

@@ -1,3 +1,14 @@
+<script>
+import TileCard from "../components/TileCard.vue";
+
+export default {
+  name: "HomePage",
+  components: {
+    TileCard,
+  },
+};
+</script>
+
 <template>
   <div class="container-fluid text-white py-5" style="background-color: #000">
     <!-- Hero Section -->
@@ -72,17 +83,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import TileCard from "../components/TileCard.vue";
-
-export default {
-  name: "HomePage",
-  components: {
-    TileCard,
-  },
-};
-</script>
 
 <style scoped>
 /* Add component-specific styles here */
