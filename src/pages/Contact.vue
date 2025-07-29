@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 export default {
   name: "ContactPage",
   data() {
@@ -13,18 +14,22 @@ export default {
     };
   },
   methods: {
-    submitForm() {
-      console.log("Form submitted:", this.form);
-      this.showAlert = true;
-      setTimeout(() => {
-        this.showAlert = false;
-      }, 3000); // Alert will disappear after 3 seconds
-      this.form = {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      };
+    async submitForm() {
+      try {
+        await axios.post('/api/contact', this.form);
+        this.showAlert = true;
+        setTimeout(() => {
+          this.showAlert = false;
+        }, 3000); // Alert will disappear after 3 seconds
+        this.form = {
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        };
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
 };
