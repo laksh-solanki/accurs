@@ -1,26 +1,28 @@
 <script>
 export default {
-  name: 'ServicesPage',
+  name: "ServicesPage",
   data() {
     return {
       services: [
         {
           id: 1,
-          title: 'Web Development',
-          description: 'We build modern, responsive, and user-friendly websites.',
-          icon: 'bi bi-code-slash',
+          title: "Web Development",
+          description:
+            "We build modern, responsive, and user-friendly websites.",
+          icon: "bi bi-code-slash",
         },
         {
           id: 2,
-          title: 'Mobile App Development',
-          description: 'We create native and cross-platform mobile apps for iOS and Android.',
-          icon: 'bi bi-phone',
+          title: "Mobile App Development",
+          description:
+            "We create native and cross-platform mobile apps for iOS and Android.",
+          icon: "bi bi-phone",
         },
         {
           id: 3,
-          title: 'UI/UX Design',
-          description: 'We design beautiful and intuitive user interfaces.',
-          icon: 'bi bi-palette',
+          title: "UI/UX Design",
+          description: "We design beautiful and intuitive user interfaces.",
+          icon: "bi bi-palette",
         },
       ],
     };
@@ -33,7 +35,9 @@ export default {
     <header class="services-header">
       <div class="container">
         <h1>Our Services</h1>
-        <p class="lead">We offer a wide range of services to help you achieve your goals.</p>
+        <p class="lead">
+          We offer a wide range of services to help you achieve your goals.
+        </p>
       </div>
     </header>
 
