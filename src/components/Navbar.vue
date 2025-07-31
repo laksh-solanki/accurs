@@ -56,7 +56,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 .navbar{
-  padding: 11px 0 11px 0 ;
+  padding: 11.7px 0 11.7px 0 ;
 }
 
 .nav-link {

@@ -166,7 +166,7 @@ export default {
               <div class="text-center">
                 <button
                   type="submit"
-                  class="btn btn-primary btn-lg"
+                  class="btns"
                   @click="triggerAlert()"
                 >
                   Send Message
@@ -339,4 +339,24 @@ iframe {
   pointer-events: none; /* Allow clicks to pass through */
   z-index: 2; /* Ensure it's above the input */
 }
+
+.btns {
+  background-color: #f3f7fe;
+  color: #3b82f6;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 140px;
+  height: 45px;
+  transition: 0.3s;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.btns:hover {
+  background-color: #3b82f6;
+  box-shadow: 0 0 0 5px #3b83f65f;
+  color: #fff;
+}
+
 </style>
