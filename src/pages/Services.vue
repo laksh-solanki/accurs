@@ -31,6 +31,9 @@ export default {
 </script>
 
 <template>
+  <v-app>
+    <v-navigation-drawer />
+  </v-app>
   <div class="services-page">
     <header class="services-header">
       <div class="container">
